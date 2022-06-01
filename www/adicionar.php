@@ -10,7 +10,7 @@ require'config.php';
        header('Location: index.php'); 
     };
 ?>
-<form method="post">
+<form method="post" style="width:100vw;height:100vh;display:flex;align-items:center;flex-direction: column;justify-content: center;">
     Nome: <br>
     <input type="text" name="nome" ><br><br>
     Email: <br>
