@@ -17,7 +17,7 @@
 
 <div class="text-center d-flex justify-content-center align-items-center h-100" >
     <form method="POST" class="form-signin">
-      <img class="mb-4" src="https://cdn-icons.flaticon.com/png/512/3293/premium/3293466.png?token=exp=1654458509~hmac=2890bfa435efba84b42c3c2b59333c0a" alt="" width="72" height="72">
+      <img class="mb-4" src="images/user.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Pagina de Login</h1>
       <label name="email" for="inputEmail" class="sr-only">Email address</label>
       <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
