@@ -3,7 +3,7 @@ require 'config.php';
 $sql = "SELECT * FROM usuarios";
 $sql = $pdo->query($sql);   
 if (isset($_GET['ordem']) && !empty($_GET['ordem'])) {
-    $ordem = $_GET['ordem'];
+    $ordem = addslashes($_GET['ordem']);
     $sql = $pdo->query("SELECT * FROM usuarios ORDER BY usuarios.$ordem");
 }
 ?>
