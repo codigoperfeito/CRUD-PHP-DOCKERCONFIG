@@ -1,16 +1,10 @@
 <?php 
     session_start();
-    $_SESSION['vip'] = '1';
+    
+    
+    date_default_timezone_set('America/Sao_Paulo');
+    print_r(Date('H:i:s'));
 
-    if(isset($_SESSION['vip']) && !empty($_SESSION['vip'])){
-
-        if ($_SESSION['vip'] == '1') {
-            echo 'você é vip';
-        }else{
-            echo 'você não é vip';
-        }
-
-    }
 
 
 ?>
