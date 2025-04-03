@@ -2,11 +2,13 @@
 
 **é necessário criar tabela de comentários e de usuarios.** <br>
 **muito simples pois basta olhar o código.** <br>
+**eu deixei um backup meudb.sql você pode tanto jogar ele como backup abrindo o meudb quanto copiando o texto dentro e jogando dentro do SQL(obs: com o meudb aberto) e colando la e executando.** <br>
 
 *uma grande dica antes de tudo é caso você queira acessar o container é esse comando ->* **docker run -ti crud-php-dockerconfig_php-env /bin/bash** <br>
 *backup do mysql está na pasta prossivelmente você vai ter que fazer manual mesmo basta acessar o arquivo* **backup** <br>
 *Para começar a usar basta usar o comando* **docker-compose up** <br>
-*a porta do PHPMyAdmin é 9001* <br>
+*a porta do PHPMyAdmin é 9001 (localhost:9001 para acessar)* <br>
+*no arquivo config tem as informacoes de login mysql_db host, login e senha padrão root* <br>
 *a porta do Sistema é 9000* <br>
 *para criar usuarios basta acessar* **"/adicionar.php"** <br>
 

@@ -8,11 +8,14 @@ services:
     ports:
       - 9000:80
   mysql_db:
-    image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
+    image: mysql:8.0
+    volumes:
+      - ./db_data:/var/lib/mysql
     restart: always
     environment:
+      MYSQL_DATABASE: meudb
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
     ports:
       - '3306:3306'
   
