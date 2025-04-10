@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 $sql = "SELECT * FROM usuarios";
-$sql = $pdo->query($sql);   
+$sql = $pdo->query($sql);
 if (isset($_GET['ordem']) && !empty($_GET['ordem'])) {
     $ordem = addslashes($_GET['ordem']);
     $sql = $pdo->query("SELECT * FROM usuarios ORDER BY usuarios.$ordem");
@@ -12,10 +12,9 @@ if (isset($_GET['ordem']) && !empty($_GET['ordem'])) {
 
 <form method="GET">
     <select name="ordem" onchange="this.form.submit()">
-        <option value=""></option>
-        <option value="nome" <?php echo (($_GET['ordem']) == 'nome') ? 'selected' : '' ; ?>>nome</option>
-        <option value="data_nascimento" <?php echo (($_GET['ordem']) == 'data_nascimento')? 'selected' : '' ; ?>>idade</option>
-    </select>
+        <option value="nome" <?php echo (($_GET['ordem']) == 'nome') ? 'selected' : ''; ?>>nome</option>
+        <option value="data_nascimento" <?php echo (($_GET['ordem']) == 'data_nascimento') ? 'selected' : ''; ?>>idade</option>
+</select>
 </form>
 
 <table class="table">

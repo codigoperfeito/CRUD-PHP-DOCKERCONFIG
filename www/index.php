@@ -14,7 +14,7 @@
         <a href="./painel_CRUD.php" class="list-group-item list-group-item-primary">Painel de Controle</a>
         <a href="./fileUpload.php" class="list-group-item list-group-item-second">Files Upload</a>
         <a href="./fileMultUpload.php" class="list-group-item list-group-item-light">Files Mult Upload</a>
-        <a href="./ordemTabela.php" class="list-group-item list-group-item-dart">Ordenar tabela</a>
+        <a href="./ordemTabela.php?ordem=nome" class="list-group-item list-group-item-dart">Ordenar tabela</a>
         <a href="./comentarios.php" class="list-group-item list-group-item-light">Comentários php</a>
         <a href="#" class="list-group-item list-group-item-dart">Lorem ipsum dolor</a>
         <a href="#" class="list-group-item list-group-item-light">Lorem ipsum dolor</a>
