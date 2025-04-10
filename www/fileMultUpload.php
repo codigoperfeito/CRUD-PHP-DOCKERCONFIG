@@ -4,12 +4,13 @@
             $arquivos = $_FILES['arquivo'];
             if (count($arquivos['tmp_name']) > 0) {
                 $arquivos2 = $_FILES['arquivo']['name'];
+                $arquivosTipo = $_FILES['arquivo']['type'];
                 foreach ($arquivos2 as $key => $value) {
                     $nameFile = md5($value.time().rand(0,99));
-                    move_uploaded_file($arquivos['tmp_name'][$key],'images/'.$nameFile.'.png');
+                    move_uploaded_file($arquivos['tmp_name'][$key],'update_arquivos/'.$value);
                     echo '<ul>';
                     echo "<li>arquivo array: ".$arquivos['tmp_name'][$key]." foi enviado </li>";
-                    echo '</ul>';
+                    echo '</ul>'; 
                 }
             }
         }
