@@ -5,15 +5,19 @@ if (isset($_POST["nome"]) && empty($_POST["nome"]) == false) {
     $email = addslashes($_POST['email']);
     $senha = md5(addslashes($_POST['senha']));
 
-
-    
     try{
+      // recebe os dados
       $sql = "INSERT INTO usuarios(nome,email,senha) VALUES (:nome,:email,:senha)";
+      //prepara o query
       $sql = $pdo->prepare($sql);
-      $sql->bindValue(":nome", $nome);
-      $sql->bindValue(":email", $email);
-      $sql->bindValue(":senha", $senha);
-      $sql->execute();
+      // joga os dados pra um array obs: coloque de forma tradicional para fins de estudo.
+      $dados = array(
+        'nome' => $nome,
+        'email' => $email,
+        'senha' => $senha
+      );
+      // joga os dados dentro da query com o execute e sobe pro SQL
+      $sql->execute($dados);
     }catch(PDOException $e){
       echo "Erro de:".$e->getMessage();
     }
