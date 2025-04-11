@@ -5,8 +5,19 @@ if (isset($_POST["nome"]) && empty($_POST["nome"]) == false) {
     $email = addslashes($_POST['email']);
     $senha = md5(addslashes($_POST['senha']));
 
-    $sql = "INSERT INTO usuarios(nome,email,senha) VALUES ('$nome','$email','$senha')";
-    $sql = $pdo->query($sql);
+
+    
+    try{
+      $sql = "INSERT INTO usuarios(nome,email,senha) VALUES (:nome,:email,:senha)";
+      $sql = $pdo->prepare($sql);
+      $sql->bindValue(":nome", $nome);
+      $sql->bindValue(":email", $email);
+      $sql->bindValue(":senha", $senha);
+      $sql->execute();
+    }catch(PDOException $e){
+      echo "Erro de:".$e->getMessage();
+    }
+
     header('Location: index.php');
 };
 ?>
@@ -14,7 +25,7 @@ if (isset($_POST["nome"]) && empty($_POST["nome"]) == false) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário com Bootstrap 5</title>
+  <title>Pagina de Criacao de conta</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>

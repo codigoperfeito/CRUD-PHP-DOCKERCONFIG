@@ -8,6 +8,7 @@ if (isset($_GET['nome']) && !empty($_GET['nome'])) {
     $date = date("Y-m-d h:i:s");
     // pode usar variavel now() do banco de dados
     $mensagemadd = "INSERT INTO mensagem(date_msg,nome,msg) VALUES ('$date','$nome','$comentario');";
+    
     $pdo->query($mensagemadd);
     $sql = 'SELECT * FROM mensagem ORDER BY date_msg DESC';
     $sql = $pdo->query($sql);
